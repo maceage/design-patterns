@@ -1,4 +1,5 @@
 ﻿using System;
+using ObserverPattern.EventDelegate;
 using ObserverPattern.IObserver;
 using ObserverPattern.Traditional;
 
@@ -39,7 +40,7 @@ namespace ObserverPattern
 		{
 			Console.WriteLine("--- Start Event/Delegate Example ---");
 
-			IObserverRunner.RunDemo();
+			EventDelegateRunner.RunDemo();
 
 			Console.WriteLine("--- End Event/Delegate Example ---");
 		}
