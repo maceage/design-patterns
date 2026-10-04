@@ -17,11 +17,11 @@ namespace FactoryPattern
 
         private static void CreateBlueSmurf()
         {
-            string carName = "blue";
+            string smurfName = "blue";
 
             SmurfFactory factory = new SmurfFactory();
 
-            ISmurf smurf = factory.CreateInstance(carName);
+            ISmurf smurf = factory.CreateInstance(smurfName);
 
             smurf.Talk();
             smurf.Sleep();
@@ -29,11 +29,11 @@ namespace FactoryPattern
 
         private static void CreateRedSmurf()
         {
-            string carName = "red";
+            string smurfName = "red";
 
             SmurfFactory factory = new SmurfFactory();
 
-            ISmurf smurf = factory.CreateInstance(carName);
+            ISmurf smurf = factory.CreateInstance(smurfName);
 
             smurf.Talk();
             smurf.Sleep();
@@ -41,11 +41,11 @@ namespace FactoryPattern
 
         private static void CreatePapaSmurf()
         {
-            string carName = "papa";
+            string smurfName = "papa";
 
             SmurfFactory factory = new SmurfFactory();
 
-            ISmurf smurf = factory.CreateInstance(carName);
+            ISmurf smurf = factory.CreateInstance(smurfName);
 
             smurf.Talk();
             smurf.Sleep();
