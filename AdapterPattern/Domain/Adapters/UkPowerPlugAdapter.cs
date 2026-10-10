@@ -1,14 +1,13 @@
 ﻿using AdapterPattern.Domain.Interfaces;
 using AdapterPattern.Domain.PinTypes;
-using AdapterPattern.Domain.Plugs;
 
 namespace AdapterPattern.Domain.Adapters
 {
 	public class UkPowerPlugAdapter : IPowerPlugAdapter
 	{
-		private readonly UkPowerPlug _ukPowerPlug;
+		private readonly IUkPowerPlug _ukPowerPlug;
 
-		public UkPowerPlugAdapter(UkPowerPlug ukPowerPlug)
+		public UkPowerPlugAdapter(IUkPowerPlug ukPowerPlug)
 		{
 			_ukPowerPlug = ukPowerPlug;
 		}
