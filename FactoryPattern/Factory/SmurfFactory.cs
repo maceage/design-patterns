@@ -15,9 +15,9 @@ namespace FactoryPattern.Factory
             LoadTypes();
         }
 
-        public ISmurf CreateInstance(string carName)
+        public ISmurf CreateInstance(string smurfName)
         {
-            Type t = GetTypeToCreate(carName);
+            Type t = GetTypeToCreate(smurfName);
 
             if (t == null)
             {
