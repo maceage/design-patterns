@@ -25,7 +25,7 @@ namespace PrototypePattern.Domain
 
 		public void EncounterAgentSmith(int numberOfTimes)
 		{
-			_numberOfTimesAgentSmithEncountered++;
+			_numberOfTimesAgentSmithEncountered += numberOfTimes;
 		}
 
 		public void MakePhoneCall()
@@ -35,7 +35,7 @@ namespace PrototypePattern.Domain
 
 		public void FireBullets(int numberOfBullets)
 		{
-			_numberOfBulletsFired++;
+			_numberOfBulletsFired += numberOfBullets;
 		}
 
 		public void PrintState()
