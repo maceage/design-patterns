@@ -2,8 +2,7 @@
 
 This repository contains C# examples of the Gang of Four design patterns.
 
-For more information see Wikipedia:
-[https://en.wikipedia.org/wiki/Software_design_pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+For more information see [Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern).
 
 ## About
 
@@ -14,8 +13,7 @@ Yes, there could be unit tests (which I may add later) but I wanted a repo that 
 
 ## Source
 
-Most of these have either been taken from examples or from the awesome Pluralsight course found here:
-[https://app.pluralsight.com/library/courses/patterns-library/table-of-contents](https://app.pluralsight.com/library/courses/patterns-library/table-of-contents)
+Most of these have either been taken from examples or from the awesome [Pluralsight course](https://app.pluralsight.com/library/courses/patterns-library/table-of-contents)
 
 Granted some of these are copied, pasted and refactored versions of what's on Pluralsight.
 So, apologies to the authors at Pluralsight for copying and pasting your code!
