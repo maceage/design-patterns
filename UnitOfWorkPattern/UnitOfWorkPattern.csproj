@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Customer.cs" />
-    <Compile Include="Framework\Database.cs" />
+    <Compile Include="Domain\CustomerRepository.cs" />
+    <Compile Include="Framework\ConsoleDatabase.cs" />
+    <Compile Include="Framework\IDatabase.cs" />
     <Compile Include="Framework\IEntity.cs" />
     <Compile Include="Framework\UnitOfWork.cs" />
     <Compile Include="Program.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnitOfWorkPattern.Domain;
 using UnitOfWorkPattern.Framework;
 
@@ -8,27 +9,42 @@ namespace UnitOfWorkPattern
 	{
 		public static void Main(string[] args)
 		{
-			UnitOfWork unitOfWork = new UnitOfWork();
+			UnitOfWork unitOfWork = new UnitOfWork(new ConsoleDatabase());
 
-			Customer customer = new Customer();
-			unitOfWork.Load(customer);
+			IReadOnlyList<Customer> customers = new CustomerRepository().GetAll();
 
-			Customer firstCustomer = new Customer { FirstName = "Steve", LastName = "Ballmer" };
-			Customer secondCustomer = new Customer { FirstName = "Steve", LastName = "Wozniak" };
+			// Change one loaded customer. The other loaded customers are untouched, so they won't be written.
+			Customer bill = customers[0];
+			bill.FirstName = "William";
+			unitOfWork.RegisterDirty(bill);
 
-			unitOfWork.Add(firstCustomer);
-			unitOfWork.Add(secondCustomer);
+			// Remove another loaded customer.
+			unitOfWork.RegisterDeleted(customers[2]);
 
-			Console.WriteLine("Changed entities...");
-			unitOfWork.ListChanged();
+			// Add two new customers.
+			unitOfWork.RegisterNew(new Customer("Steve", "Ballmer"));
+			unitOfWork.RegisterNew(new Customer("Steve", "Wozniak"));
 
-			Console.WriteLine("Added entities...");
-			unitOfWork.ListAdded();
+			Print("New entities...", unitOfWork.New);
+			Print("Dirty entities...", unitOfWork.Dirty);
+			Print("Removed entities...", unitOfWork.Removed);
 
 			Console.WriteLine("Committing changes...");
 			unitOfWork.Commit();
 
+			Console.WriteLine($"Changes pending after commit: {unitOfWork.HasChanges}");
+
 			Console.ReadLine();
+		}
+
+		private static void Print(string heading, IEnumerable<IEntity> entities)
+		{
+			Console.WriteLine(heading);
+
+			foreach (IEntity entity in entities)
+			{
+				Console.WriteLine($"  {entity}");
+			}
 		}
 	}
 }
